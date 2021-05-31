@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    long int a,b,now,last=0,count=0;
+    cin>>a>>b;
+
+    for (int i=a;i<=b;i++) {
+        now=abs(i);
+        int cop=now;
+        int end = now%100;
+        while(now>=100) {
+            now/=10;
+        }
+        int start = now;
+        now=cop;
+
+        int raz=abs(end-start);
+
+        if(raz!=0){
+        if(now%raz==0){
+                count++;
+                last=i;
+            }
+        }
+    }
+       cout<<count<<" "<<last;
+
+}
