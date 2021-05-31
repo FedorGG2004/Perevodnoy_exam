@@ -1,0 +1,33 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    ifstream fin("input.txt");
+    string s;
+    fin>> s;
+    fin.close();
+    int maxl=0, loc_maxl=0, tmp=0;
+    int max_ind, loc_max_ind;
+    for(int i=0; i<s.length(); i++){
+        for (int j=s.length(); j>=0; j--){
+            if(s[i]==s[j]){
+                tmp=j-i-1;
+                if(tmp>loc_maxl){
+                    loc_maxl=tmp;
+                    loc_max_ind=i;
+                }
+                break;
+            }
+        }
+    if(loc_maxl>maxl){
+        maxl=loc_maxl;
+        max_ind=loc_max_ind;
+        }
+    }
+    cout << s[max_ind]<<" "<<maxl;
+    return 0;
+}
