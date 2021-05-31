@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+
+int main()
+{
+    int n, m, a ,b;
+    int cod;
+    cin>>n>>m;
+    cin>>a>>b;
+    cin>>cod;
+    int pole[n][m];
+    for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            cin>>pole[i][j];
+        }
+    }
+    for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            if(pole[b-1][a-1]!=cod){
+                pole[b-1][a-1]=cod;
+            }
+        }
+    }
+    for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            cout<<pole[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
